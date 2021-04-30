@@ -36,11 +36,13 @@ namespace AkaraProject
                 principal.Name = serializeModel.Name;
                 principal.Phone = serializeModel.Phone;
                 principal.Image = serializeModel.Image;
-                //principal.Roles = serializeModel.Roles.Select(ob=>ob.Name).ToArray<string>();
+                principal.Role = serializeModel.RoleName;
 
                 HttpContext.Current.User = principal;
             }
 
         }
+
+        
     }
 }

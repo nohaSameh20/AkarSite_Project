@@ -15,7 +15,8 @@ namespace AkaraProject.CustomeAuthentication
         public string Phone { get; set; }
         public string Image { get; set; }
         public string Password { get; set; }
-        public string[] Roles { get; set; }
+
+        public string Role { get; set; }
         #endregion
 
         public IIdentity Identity
@@ -29,7 +30,7 @@ namespace AkaraProject.CustomeAuthentication
 
         public bool IsInRole(string role)
         {
-            if (Roles.Any(r => role.Contains(r)))
+            if (Role==role)
             {
                 return true;
             }

@@ -85,7 +85,7 @@ namespace AkaraProject.CustomeAuthentication
         {
             using (ApplicationDBContext dbContext = new ApplicationDBContext())
             {
-                var user = dbContext.Users.FirstOrDefault(obj => obj.UserName == username);
+                var user = dbContext.Users.Include("Role").FirstOrDefault(obj => obj.UserName == username);
 
                 if (user == null)
                 {

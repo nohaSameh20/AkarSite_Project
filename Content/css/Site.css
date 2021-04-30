@@ -1625,6 +1625,7 @@ img {
 ----------------*/
 .breadcrumbs {
     background: url(../Images/common/breadcrumbs.jpg) no-repeat scroll center center ;
+    background-size:cover;
     padding: 176px 0 19px;
     position: relative;
 }

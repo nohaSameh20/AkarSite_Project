@@ -53,7 +53,7 @@ namespace AkaraProject.Controllers
                             UserEmail = user.Email,
                             Image=user.Image,
                             Phone=user.Phone,
-                            RoleName=dBContext.Roles.SingleOrDefault(ob => ob.Name == "User").Name,
+                            RoleName=user.RoleName,
                             Password=user.Password,
                         };
                        

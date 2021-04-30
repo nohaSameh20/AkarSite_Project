@@ -16,8 +16,7 @@ namespace AkaraProject
         public string Password { get; set; }
         public string RoleName { get; set; }
 
-
-        public ICollection<Role> Roles { get; set; }
+        public List<Role> Role { get; set; }
 
     }
 }

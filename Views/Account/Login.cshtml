@@ -7,6 +7,9 @@
         background: url(../../Content/Images/common/breadcrumbs.jpg) no-repeat scroll center center;
         background-size: cover;
     }
+    input, textarea, select {
+        max-width: 100% !important;
+    }
 </style>
 
 <!--Breadcrumbs start-->
@@ -47,11 +50,11 @@
                         <div class="formDiv" style="padding-left: 30px;">
                             <div class="username">
                                 @Html.TextBoxFor(m => m.Name, new { @class = "form-control", placeholder = "Username" })
-                                @*<input type="text" placeholder="Username">*@
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                             </div>
                             <div class="password">
                                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
-                                @*<input type="password" placeholder="Password">*@
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                             </div>
                             <div class="agree-text">
                                 <p>
