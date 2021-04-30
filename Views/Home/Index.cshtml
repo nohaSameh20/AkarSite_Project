@@ -136,8 +136,8 @@
                                                                     var identity = ((CustomPrincipal)HttpContext.Current.User);
                                                                     if (identity.Role == "Admin")
                                                                     {
-                                                                        @Html.ActionLink(" ", "Approve", "Home", new { id = item.Id } , new { @class = "fa fa-toggle-on fa-x Approve", @style = "color:white;text-decoration:none" })
-                                                                        @Html.ActionLink(" ", "Cancel", "Home", new { id = item.Id }, new { @class = "fa fa-times fa-x Cancel", @style = "color:white;text-decoration:none" })
+                                                                        @Html.ActionLink("Approve", "Approve", "Home", new { id = item.Id } , new {  @style = "color:white;text-decoration:none" })
+                                                                        @Html.ActionLink("Cancel", "Cancel", "Home", new { id = item.Id }, new {  @style = "color:white;text-decoration:none" })
 
                                                                     }
                                                                 }
@@ -888,41 +888,3 @@
 <script src="~/Scripts/style-customizer.js"></script>
 <script src="~/Scripts/plugins.js"></script>
 <script src="~/Scripts/main.js"></script>
-<script>
-    $('.Approve').click(function () {
-           $.ajax({
-            type: 'POST',
-            url: '@Url.Action("Approve")',
-            dataType: 'json',
-            data: { id: '' },
-         success: function (data) {
-             alert("true");
-            },
-            error: function (ex) {
-                var r = jQuery.parseJSON(response.responseText);
-                alert("Message: " + r.Message);
-                alert("StackTrace: " + r.StackTrace);
-                alert("ExceptionType: " + r.ExceptionType);
-            }
-        });
-    });
-</script>
-<script>
-    $('.Cancel').click(function () {
-           $.ajax({
-            type: 'POST',
-            url: '@Url.Action("Cancel")',
-            dataType: 'json',
-            data: { id: '' },
-         success: function (data) {
-             alert("true");
-            },
-            error: function (ex) {
-                var r = jQuery.parseJSON(response.responseText);
-                alert("Message: " + r.Message);
-                alert("StackTrace: " + r.StackTrace);
-                alert("ExceptionType: " + r.ExceptionType);
-            }
-        });
-    });
-</script>

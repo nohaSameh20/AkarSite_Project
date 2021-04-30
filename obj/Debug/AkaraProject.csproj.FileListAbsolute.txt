@@ -86,3 +86,4 @@ C:\Users\Noha\source\repos\AkaraProject\AkaraProject\obj\Debug\AkaraProject.Migr
 C:\Users\Noha\source\repos\AkaraProject\AkaraProject\obj\Debug\AkaraProject.Migrations.mig02.resources
 C:\Users\Noha\source\repos\AkaraProject\AkaraProject\obj\Debug\AkaraProject.Migrations.mig03.resources
 C:\Users\Noha\source\repos\AkaraProject\AkaraProject\obj\Debug\AkaraProject.Migrations.mig04.resources
+C:\Users\Noha\source\repos\AkaraProject\AkaraProject\obj\Debug\AkaraProject.csprojAssemblyReference.cache

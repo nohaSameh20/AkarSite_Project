@@ -20,10 +20,10 @@ namespace AkaraProject.Controllers
             IQueryable<Advertising> query;
             List<Advertising> data;
             IEnumerable<AddAdvertisingViewModel> result;
-            var identity = ((CustomPrincipal)System.Web.HttpContext.Current.User);
+            var identity = (System.Web.HttpContext.Current?.User);
             if (ModelState.IsValid)
             {
-                if (identity.Role == "Admin")
+                if (identity.IsInRole("Admin"))
                 {
                     query = dBContext.Advertisings.Where(ob => true);
                     data = query.OrderByDescending(obj => obj.CreatedAt).ToList();
@@ -65,7 +65,7 @@ namespace AkaraProject.Controllers
             return View();
         }
 
-        [HttpPost]
+       
         public ActionResult Approve(Guid Id)
         {
             var adver = dBContext.Advertisings.SingleOrDefault(obj => obj.Id == Id);
@@ -75,7 +75,7 @@ namespace AkaraProject.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpPost]
+        
         public ActionResult Cancel(Guid Id)
         {
             var adver = dBContext.Advertisings.SingleOrDefault(obj => obj.Id == Id);
